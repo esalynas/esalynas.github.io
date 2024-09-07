@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstebanSalinas</title>
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3A3A3A; /* Gris oscuro fondo */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #000000;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: white; /* Texto blanco */
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1); /* Efecto glassmorphism */
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Hover blanco */
+            color: #000000;
+        }
+
+        /* Estilo para centrar la imagen en la primera sección */
+        .intro-content img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px; /* Añadir bordes redondeados opcionales */
+        }
+
+        /* Estilo para la imagen pequeña debajo del botón */
+        .intro-content .small-banner {
+            margin-top: 20px; /* Espacio entre el botón y la imagen */
+            max-width: 30%;   /* Ajusta el tamaño de la imagen pequeña */
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Centra la imagen */
+        }
+
+        /* Estilos para la sección con imagen de fondo y carrusel encima */
+        .about-section {
+    position: relative;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Ajusta el estilo para la imagen en la sección "about" */
+.about-section img {
+    max-width: 10%; /* Ajusta este valor para controlar el tamaño máximo en pantallas grandes */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+/* Media query para pantallas grandes (como PC) */
+@media (min-width: 1024px) {
+    .about-section img {
+        max-width: 35%; /* Ajusta el tamaño máximo en pantallas grandes */
+    }
+}
+
+/* Media query para pantallas pequeñas (como móviles) */
+@media (max-width: 768px) {
+    .about-section img {
+        max-width: 70%; /* Asegura que la imagen no se desborde en móviles */
+    }
+}
+        /* Estilos para el carrusel ajustado */
+/* Estilos para el carrusel ajustado */
+.carousel {
+    position: relative;
+    width: 100%; /* Usa el 100% del contenedor para asegurar que no se corte ningún slide */
+    height: 300px;
+    margin: -10px auto 0;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ajusta el ancho del track para acomodar dos slides visibles a la vez */
+}
+
+.carousel-slide {
+    flex: 1 0 50%; /* Ajusta para mostrar dos slides a la vez */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin: 0; /* Quita el margen entre slides */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.carousel-slide img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+
+        /* Colores y bordes de los slides */
+        .carousel-slide:nth-child(1), .carousel-slide:nth-child(2) {
+            border: 2px solid pink;
+        }
+
+        .carousel-slide:nth-child(3), .carousel-slide:nth-child(4) {
+            border: 2px solid lightblue;
+        }
+
+        .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
+            border: 2px solid yellow;
+        }
+
+        /* Estilo para la imagen pequeña debajo del carrusel */
+.small-banner-end img {
+    margin-top: 5%;
+    max-width: 30%;  /* Asegura que la imagen no se desborde del contenedor */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centra la imagen y añade espacio alrededor */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de Introducción con Imagen -->
+        <section id="intro" class="section">
+            <div class="intro-content">
+                <img src="soy.png" alt="Imagen de presentación">
+                <a href="#about" class="button">Conóceme</a>
+                <img src="banner_small.png" alt="Banner pequeño" class="small-banner">
+            </div>
+        </section>
+
+        <!-- Sección de Quién Soy -->
+        <section id="about" class="section about-section">
+            <img src="Soy_items_ind.png" alt="Imagen de quién soy">
+            <!-- Carrusel Animado -->
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="icono1.png" alt="Icono 1">
+                        <p>Mi motor, mi familia.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono1.png" alt="Icono 2">
+                        <p>El rock, la salsa y tatuar.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono2.png" alt="Icono 3">
+                        <p>Ingenioso, estudioso destacado.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono2.png" alt="Icono 4">
+                        <p>Admo. de Empresas.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono3.png" alt="Icono 5">
+                        <p>Gestor proyectos innovadores.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono3.png" alt="Icono 6">
+                        <p>Gestor mejora procesos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="small-banner-end">
+                <img src="banner_small_end.png" alt="Banner pequeño al final">
+            </div>
+            
+        </section>
+    </div>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        let index = 0;
+        
+        function moveCarousel() {
+            index += 2; // Mover de a dos slides
+            if (index >= 6) {
+                index = 0;
+            }
+            track.style.transform = `translateX(-${index * 50}%)`;
+        }
+
+        setInterval(moveCarousel, 3000); // Cambiar cada 3 segundos
+
+        // Script para animar el scroll a las secciones cuando se hace clic en los botones
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const sectionId = this.getAttribute('href');
+                document.querySelector(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
