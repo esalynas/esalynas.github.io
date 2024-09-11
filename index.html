@@ -9,7 +9,9 @@
     --color-negro: #000000;
     --color-amarillo-macondo: #F7E300; /* Amarillo Macondo */
     --color-naranja-alba: #FF6F00; /* Naranja Alba */
-    --color-violeta-orquidea: #D9A2F4; /* Violeta Orquidea */
+    --color-violeta-orquidea: #9F63D1; /* Violeta Orquidea */
+    --color-blanco-perla: #ffffff; /* blanco */
+    --color-verde-andino: #00CDEC; /* Verde Andino */
 }
         /* Estilos globales */
         body {
@@ -174,17 +176,18 @@
         }
 
         .carousel-slide:nth-child(3), .carousel-slide:nth-child(4) {
-            border: 3px solid lightblue;
-        }
-
-        .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
-            border: 3px solid yellow;
-        }
-
-        .carousel-slide:nth-child(7), .carousel-slide:nth-child(8) {
             border: 3px solid pink;
         }
 
+        .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
+            border: 3px solid lightblue;
+        }
+
+        .carousel-slide:nth-child(7), .carousel-slide:nth-child(8) {
+            border: 3px solid yellow;
+        }
+
+        
         .carousel-slide:nth-child(9), .carousel-slide:nth-child(10) {
             border: 3px solid yellow;
         }
@@ -195,14 +198,14 @@
         /* Estilo para la imagen pequeña debajo del carrusel */
 .small-banner-end img {
     margin-top: -5%;
-    max-width: 30%;  /* Asegura que la imagen no se desborde del contenedor */
+    max-width: 20%;  /* Asegura que la imagen no se desborde del contenedor */
     height: auto;
     display: block;
-    margin: 20px auto; /* Centra la imagen y añade espacio alrededor */
+    margin: 15px auto; /* Centra la imagen y añade espacio alrededor */
 }
 
 #portfolio {
-            background: #fff;
+            background: #000000;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -276,7 +279,7 @@
         }
 
         .skill-card-back {
-            background: #f8f9fa;
+            background: #ffffff;
             color: #000000; /* Texto en negro */
             transform: rotateY(180deg);
             padding: 5px; /* Espaciado reducido */
@@ -334,6 +337,22 @@ h2 {
     border-radius: 10px; /* Opcional: redondea las esquinas de la imagen */
 }
 
+.img-poder-aportar {
+    max-width: 50%;  /* Ajusta el tamaño máximo al 50% del contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para un mejor diseño */
+    margin: 0 auto;  /* Centra la imagen */
+    display: block;  /* Asegura que se comporte como un bloque */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .img-poder-aportar {
+        max-width: 80%;  /* Aumenta el tamaño en pantallas pequeñas */
+    }
+}
+
+
 /* Ajustes opcionales para pantallas muy pequeñas */
 @media (max-width: 768px) {
     .portfolio-content {
@@ -341,19 +360,21 @@ h2 {
     }
 }
 
+.skill-card:nth-child(4) .skill-card-front {
+    background: var(--color-verde-andino);
+    color: #ffffff;
+}
+
 .skill-card:nth-child(1) .skill-card-front {
-    background: var(--color-negro);
+    background: var(--color-amarillo-macondo);
+    color: #000;
 }
 
 .skill-card:nth-child(2) .skill-card-front {
-    background: var(--color-amarillo-macondo);
-}
-
-.skill-card:nth-child(3) .skill-card-front {
     background: var(--color-naranja-alba);
 }
 
-.skill-card:nth-child(4) .skill-card-front {
+.skill-card:nth-child(3) .skill-card-front {
     background: var(--color-violeta-orquidea);
 }
 
@@ -380,7 +401,6 @@ h2 {
         <!-- Sección de Quién Soy -->
         <section id="about" class="section about-section hidden">
             <img src="Soy_items_ind.png" alt="Imagen de quién soy">
-            <!-- Carrusel Animado -->
             <div class="carousel">
                 <div class="carousel-track">
                     <div class="carousel-slide">
@@ -392,28 +412,28 @@ h2 {
                         <p>El rock, la salsa y tatuar.</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="icono2.png" alt="Icono 3">
-                        <p>Admon de Empresas disciplinado.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono2.png" alt="Icono 4">
-                        <p>Ingenioso, y un estudioso destacado.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 5">
-                        <p>Apasionado por proyectos innovadores.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 6">
-                        <p>Curioso por construir y mejorar.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 7">
+                        <img src="icono1.png" alt="Icono 3">
                         <p>Soñador.</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 8">
-                        <p>Inquieto por la investigación.</p>
+                        <img src="icono1.png" alt="Icono 4">
+                        <p>Amable.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono2.png" alt="Icono 5">
+                        <p>Admon de Empresas disciplinado.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono2.png" alt="Icono 6">
+                        <p>Ingenioso, y un estudioso destacado.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono3.png" alt="Icono 7">
+                        <p>Apasionado por proyectos innovadores.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="icono3.png" alt="Icono 8">
+                        <p>Curioso por construir y mejorar.</p>
                     </div>
                     <div class="carousel-slide">
                         <img src="icono3.png" alt="Icono 9">
@@ -434,7 +454,7 @@ h2 {
         <!-- Sección mi portafolio -->
         <section id="portfolio" class="section hidden">
             <div class="portfolio-container">
-                <h2>Ansioso de sumar al equipo:</h2>
+                <img src="poder_aportar.png" alt="Imagen poder aportar" class="img-poder-aportar">
                 <div class="portfolio-content">
                     <div class="skills">
                         <!-- Tarjetas de habilidades -->
@@ -500,7 +520,7 @@ h2 {
             track.style.transform = `translateX(-${index * 50}%)`;
         }
 
-        setInterval(moveCarousel, 6000); // Cambiar cada 6 segundos
+        setInterval(moveCarousel, 3000); // Cambiar cada 3 segundos
 
         // Script para animar el scroll a las secciones cuando se hace clic en los botones
         document.querySelectorAll('.button').forEach(button => {
