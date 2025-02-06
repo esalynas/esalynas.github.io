@@ -7,9 +7,9 @@
     <style>
         :root {
     --color-negro: #000000;
-    --color-amarillo-macondo: #ff0000; /* Tarjeta 1 Amarillo Macondo */
+    --color-amarillo-macondo: #2f4156; /* Tarjeta 1 Amarillo Macondo */
     --color-naranja-alba: #FF6F00; /* Tarjeta 2 Naranja Alba */
-    --color-violeta-orquidea: #9F63D1; /* Tarjeta 3 Violeta Orquidea */
+    --color-violeta-orquidea: #cfe0f3; /* Tarjeta 3 Violeta Orquidea */
     --color-blanco-perla: #ffffff; /* blanco */
     --color-verde-andino: #00CDEC; /* Verde Andino */
 }
@@ -31,7 +31,7 @@
         .section {
             padding: 100px 20px;
             text-align: center;
-            background-color: #30333b; /* Color Portada de empresa */
+            background-color: #2f4156; /* Color Portada de empresa */
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -62,20 +62,20 @@
 .button {
     display: inline-block;
     padding: 12px 24px;
-    background: rgb(255, 255, 255); /* Efecto glassmorphism */
-    color: #000000;
+    background: #fd8802; /* Color de fondo del botón de la portada empresa #fd8802 */
+    color: #ffffff; /* Letra del botón blanca */
     border-radius: 5px;
     text-decoration: none;
     margin-top: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease, color 0.3s ease;
-    animation: blink 1.5s infinite; /* Aplicar la animación de parpadeo */
+    animation: blink 1.5s infinite; /* Animación de parpadeo */
 }
 
 .button:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Hover blanco */
-    color: #000000;
+    background-color: #ff9f32; /* Hover con un tono más claro del naranja (#fd8802) */
+    color: #ffffff; /* La letra sigue siendo blanca en el hover */
 }
 
 
@@ -100,7 +100,7 @@
         /* Estilos para la sección con imagen de fondo y carrusel encima */
         .about-section {
     position: relative;
-    background-color: #ff0000; /* color fondo donde está carrusel empresa */
+    background-color: #fd8802; /* color fondo donde está carrusel empresa */
     border-radius: 10px;
     overflow: hidden; /* Asegura que la imagen no se desborde */
     text-align: center; /* Centra el contenido */
@@ -205,7 +205,7 @@
 }
 
 #portfolio {
-            background: #818183; /* color fondo donde están tarjetas empresa */
+            background: #808694; /* color fondo donde están tarjetas empresa */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
