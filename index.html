@@ -8,10 +8,10 @@
         :root {
     --color-negro: #000000;
     --color-amarillo-macondo: #F7E300; /* Amarillo Macondo */
-    --color-naranja-alba: #7C736E ; /* Naranja Alba */
+    --color-naranja-alba: #d3d5ce ; /* Naranja Alba */
     --color-violeta-orquidea: #F7E300; /* Violeta Orquidea la paso amarillo*/
     --color-blanco-perla: #ffffff; /* blanco */
-    --color-verde-andino: #7C736E ; /* Verde Andino */
+    --color-verde-andino: #d3d5ce ; /* Verde Andino */
 }
         /* Estilos globales */
         body {
@@ -107,7 +107,7 @@
     text-align: center; /* Centra el contenido */
 }
 
-/* Ajusta el estilo para la imagen en la sección "about" */
+/* Ajusta el estilo para la imagen en la sección "p1 analisis de datos" */
 .about-section img {
     max-width: 10%; /* Ajusta este valor para controlar el tamaño máximo en pantallas grandes */
     height: auto;
@@ -133,8 +133,8 @@
 .carousel {
     position: relative;
     width: 100%; /* Usa el 100% del contenedor para asegurar que no se corte ningún slide */
-    height: 200px;
-    margin: -10px auto 0;
+    height: 400px; /* largo del contenedor de slide*/
+    margin: 5px auto 0;
     overflow: hidden;
 }
 
@@ -145,7 +145,8 @@
 }
 
 .carousel-slide {
-    flex: 1 0 50%; /* Ajusta para mostrar dos slides a la vez */
+    flex: 1 0 100%; /* Ajusta para mostrar dos slides a la vez */
+    height: 300px; /* Ajusta la altura de los slides */
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
@@ -159,7 +160,7 @@
 }
 
 .carousel-slide img {
-    max-width: 80px;
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 0 auto 10px;
@@ -173,24 +174,24 @@
 
         /* Colores y bordes de los slides */
         .carousel-slide:nth-child(1), .carousel-slide:nth-child(2) {
-            border: 3px solid pink;
+            border: 3px solid #91ce00;
         }
 
         .carousel-slide:nth-child(3), .carousel-slide:nth-child(4) {
-            border: 3px solid pink;
+            border: 3px solid #91ce00;
         }
 
         .carousel-slide:nth-child(5), .carousel-slide:nth-child(6) {
-            border: 3px solid lightblue;
+            border: 3px solid #91ce00;
         }
 
         .carousel-slide:nth-child(7), .carousel-slide:nth-child(8) {
-            border: 3px solid yellow;
+            border: 3px solid #91ce00;
         }
 
         
         .carousel-slide:nth-child(9), .carousel-slide:nth-child(10) {
-            border: 3px solid yellow;
+            border: 3px solid #91ce00;
         }
 
 
@@ -202,11 +203,11 @@
     max-width: 20%;  /* Asegura que la imagen no se desborde del contenedor */
     height: auto;
     display: block;
-    margin: 15px auto; /* Centra la imagen y añade espacio alrededor */
+    margin: 3px auto; /* Centra la imagen y añade espacio alrededor */
 }
 
 #portfolio {
-            background: #95c93b; /* color empresa */
+            background: #bedbbe; /* color empresa */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -363,21 +364,30 @@ h2 {
 
 .skill-card:nth-child(4) .skill-card-front {
     background: var(--color-verde-andino);
-    color: #ffffff;
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(1) .skill-card-front {
     background: var(--color-amarillo-macondo);
     color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(2) .skill-card-front {
     background: var(--color-naranja-alba);
+    color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
 }
 
 .skill-card:nth-child(3) .skill-card-front {
     background: var(--color-violeta-orquidea);
     color: #000;
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño más grande */
 }
 
 
@@ -590,6 +600,9 @@ h2 {
     color: #000;
 }
 
+
+
+
     </style>
 </head>
 <body>
@@ -603,116 +616,132 @@ h2 {
             </div>
         </section>
 
-        <!-- Sección 1 Carrusel de Quién Soy -->
-        <section id="about" class="section about-section hidden">
-            <img src="Soy_items_ind.png" alt="Imagen de quién soy">
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 1">
-                        <p>Mi motor, la casita a mi madre.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 2">
-                        <p>El rock, la salsa y tatuar.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 3">
-                        <p>Soñador.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono1.png" alt="Icono 4">
-                        <p>Amable.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono2.png" alt="Icono 5">
-                        <p>Admon de Empresas disciplinado.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono2.png" alt="Icono 6">
-                        <p>Ingenioso, y un estudioso destacado.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 7">
-                        <p>Apasionado por proyectos innovadores.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 8">
-                        <p>Curioso por construir y mejorar.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 9">
-                        <p>100% dispuesto a aportar.</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="icono3.png" alt="Icono 10">
-                        <p>100% dispuesto a aprender.</p>
-                    </div>
-                </div>
+        <!-- Sección 1 Carrusel ANÁLISIS COMPENSACIÓN -->
+<section id="about" class="section about-section hidden">
+    <img src="Soy_items_ind.png" alt="Imagen de quién soy">
+    <img src="p1_python.png" alt="letrero">
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/costo_laboral_area.png" alt="Costo Laboral por Área">
+                <p>Costo Laboral por Área</p>
             </div>
-            <img src="banner_small_end.png" alt="Banner pequeño" class="small-banner">
-            <!-- Botón "Ver más" que redirige a la sección 3 (Portafolio) -->
-            <p style="color: #ffffff;">¿Por qué hacer parte de la familia Erco Energy?.</p>
-            <a href="#portfolio" class="button">Ver más</a>
-           
-        </section>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/salario_genero.png" alt="Distribución Salarial por Género">
+                <p>Distribución Salarial por Género</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/rotacion_salarial.png" alt="Rotación Salarial">
+                <p>Rotación Salarial</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/indicador_crecimiento.png" alt="Indicador de Crecimiento">
+                <p>Indicador de Crecimiento</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/salario_por_cargo.png" alt="Promedio de Salario por Cargo">
+                <p>Promedio de Salario por Cargo</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/brecha_salarial.png" alt="Brecha Salarial">
+                <p>Brecha Salarial</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/nivel_educativo_genero.png" alt="Nivel Educativo por Género">
+                <p>Nivel Educativo por Género</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/relacion_edad_salario.png" alt="Relación entre Edad y Salario">
+                <p>Relación entre Edad y Salario</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/contrato_experiencia.png" alt="Tipos de Contrato con Años de Experiencia">
+                <p>Tipos de Contrato con Años de Experiencia</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="graficos_indicadores/empleados_por_fondo.png" alt="Elección fondo Pensional">
+                <p>Fondo pensional por edad.</p>
+            </div>
+        </div>
+    </div>
+    <img src="banner_small_end.png" alt="Banner pequeño" class="small-banner">
+    <!-- Botón "Ver más" que redirige a la sección 3 (Portafolio) -->
+    <p style="color: #000000;">El análisis y optimización salarial son clave. Herramientas como Python, Excel y ETL potencian la toma de decisiones estratégicas.
+
+        <b>Importancia de los Indicadores</b>
+        
+        Costo Laboral por Área: Distribuye eficientemente el presupuesto.
+        Distribución Salarial por Género: Detecta brechas y promueve equidad.
+        Rotación Salarial: Relaciona estabilidad y competitividad.
+        Indicador de Crecimiento: Mide contratación y costos.
+        Promedio de Salario por Cargo: Compara competitividad interna y externa.
+        Equidad Interna y Externa: Previene desajustes salariales.
+        <b>Impacto de la Tecnología</b>
+        El análisis con Python y Excel permite reportes automatizados y gráficos claros. Los procesos ETL mejoran precisión y planificación.
+        
+        El uso de estas herramientas convierte datos en acciones estratégicas, optimizando compensaciones y fortaleciendo la empresa.</p>
+    <a href="#portfolio" class="button">Ver más</a>
+</section> 
+
 
         
 
-        <!-- Sección mi portafolio -->
+        <!-- Sección mi p2 estructura salarial -->
         <section id="portfolio" class="section hidden">
             <div class="portfolio-container">
                 <img src="Poder_aportar.png" alt="Imagen poder aportar" class="img-poder-aportar">
                 <div class="portfolio-content">
                     <div class="skills">
-                        <!-- Tarjetas de habilidades -->
-                        <div class="skill-card">
-                            <div class="skill-card-inner">
-                                <div class="skill-card-front">
-                                    Proyectos creativos e ingeniosos.
-                                </div>
-                                <div class="skill-card-back">
-                                    <p>Con base en recursividad e imaginación.</p>
-                                </div>
-                            </div>
+                         <!-- Tarjetas de habilidades -->
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Elementos Clave
                         </div>
-                        <div class="skill-card">
-                            <div class="skill-card-inner">
-                                <div class="skill-card-front">
-                                    Soluciones desde lo Simple.
-                                </div>
-                                <div class="skill-card-back">
-                                    <p>Diseñadas desde los OKRs</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-card-inner">
-                                <div class="skill-card-front">
-                                    Iniciativas Estratégicas
-                                </div>
-                                <div class="skill-card-back">
-                                    <p> Beneficiando el proceso y las personas.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-card-inner">
-                                <div class="skill-card-front">
-                                    Creación con las personas.
-                                </div>
-                                <div class="skill-card-back">
-                                    <p>Impulsando la creatividad y solución de retos.</p>
-                                </div>
-                            </div>
+                        <div class="skill-card-back">
+                            <p>Valoración de puestos, equidad interna y competitividad externa.</p>
                         </div>
                     </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Análisis de Mercado
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Uso de encuestas salariales y benchmarking sectorial.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Criterios de Ajuste
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Desempeño, inflación, compa-ratio y retención de talento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            Enfoque Innovador
+                        </div>
+                        <div class="skill-card-back">
+                            <p>Analítica de datos, automatización y people 360°.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
                     <!-- Imagen de portafolio al lado derecho -->
                     <div class="portfolio-image">
                         <img src="Soy_portafolio.png" alt="Imagen de portafolio">
                     </div>
                 </div>
             </div>
+            <img src="flujo.png" alt="Img flujo" class="img-poder-aportar">
+            <img src="flujo_estrategia.png" alt="Img estrategia" class="img-poder-aportar">
             <a href="#p3-compensacion" class="button">Ver más</a>
         </section>
 
@@ -726,11 +755,12 @@ h2 {
             <!-- Evaluación - Carrusel de imágenes -->
             <div class="subsection">
                 <h3>Evaluación</h3>
-                <div class="carousel">
+                <div class="carousel" id="evaluacion-carousel">
                     <div class="carousel-track">
                         <div class="carousel-slide"><img src="eval1.png" alt="Evaluación 1"></div>
                         <div class="carousel-slide"><img src="eval2.png" alt="Evaluación 2"></div>
                         <div class="carousel-slide"><img src="eval3.png" alt="Evaluación 3"></div>
+                        <div class="carousel-slide"><img src="eval4.png" alt="Evaluación 4"></div>
                     </div>
                 </div>
             </div>
@@ -738,7 +768,7 @@ h2 {
             <!-- Diseño de Beneficios - Carrusel con transición -->
             <div class="subsection">
                 <h3>Diseño de Beneficios</h3>
-                <div class="carousel transition-carousel">
+                <div class="carousel transition-carousel" id="beneficios-carousel">
                     <div class="carousel-track">
                         <div class="carousel-slide"><img src="beneficio1.png" alt="Beneficio 1"></div>
                         <div class="carousel-slide"><img src="beneficio2.png" alt="Beneficio 2"></div>
@@ -747,26 +777,26 @@ h2 {
                 </div>
             </div>
             
-            <!-- Plan de Comunicación - Tarjetas Informativas -->
-            <div class="subsection">
-                <h3>Plan de Comunicación</h3>
-                <div class="info-cards">
-                    <div class="card">
-                        <img src="comunicacion1.png" alt="Comunicación 1">
-                        <p>Estrategias de comunicación interna</p>
-                    </div>
-                    <div class="card">
-                        <img src="comunicacion2.png" alt="Comunicación 2">
-                        <p>Canales de información efectivos</p>
-                    </div>
-                    <div class="card">
-                        <img src="comunicacion3.png" alt="Comunicación 3">
-                        <p>Participación y retroalimentación</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#p4-excel" class="button">Ver más</a>
-        </section>
+            <!-- Plan de Comunicación -  -->
+<div class="subsection">
+    <h3>Plan de Comunicación</h3>
+    <div class="info-cards">
+        <div class="card">
+            <img src="comunicacion1.png" alt="Comunicación 1">
+            <p style="color: black;">Estrategias de comunicación interna</p>
+        </div>
+        <div class="card">
+            <img src="comunicacion2.png" alt="Comunicación 2">
+            <p style="color: black;">Canales de información efectivos</p>
+        </div>
+        <div class="card">
+            <img src="comunicacion3.png" alt="Comunicación 3">
+            <p style="color: black;">Participación y retroalimentación</p>
+        </div>
+    </div>
+</div>
+<a href="#p4-excel" class="button">Ver más</a>
+</section>
 
 
         <!-- Sección P4 EXCEL -->
@@ -875,6 +905,39 @@ h2 {
         }
 
         setInterval(moveCarousel, 5000); // Cambiar cada 3 segundos
+
+
+        // carrusel evaluacion p3
+        const evaluacionTrack = document.querySelector('#evaluacion-carousel .carousel-track');
+    const evaluacionSlides = document.querySelectorAll('#evaluacion-carousel .carousel-slide');
+    let evaluacionIndex = 0;
+    
+    function moveEvaluacionCarousel() {
+        evaluacionIndex++; // Avanzar de uno en uno
+        if (evaluacionIndex >= evaluacionSlides.length) {
+            evaluacionIndex = 0; // Reiniciar si llega al final
+        }
+        evaluacionTrack.style.transform = `translateX(-${evaluacionIndex * 100}%)`; // Mover un slide completo
+    }
+
+    setInterval(moveEvaluacionCarousel, 6000); // Cambia cada 3 segundos
+
+    
+        // CARRUSEL BENEFICIOS P3
+        const beneficiosTrack = document.querySelector('#beneficios-carousel .carousel-track');
+    const beneficiosSlides = document.querySelectorAll('#beneficios-carousel .carousel-slide');
+    let beneficiosIndex = 0;
+    
+    function moveBeneficiosCarousel() {
+        beneficiosIndex++; // Avanzar de uno en uno
+        if (beneficiosIndex >= beneficiosSlides.length) {
+            beneficiosIndex = 0; // Reiniciar si llega al final
+        }
+        beneficiosTrack.style.transform = `translateX(-${beneficiosIndex * 100}%)`; // Mover un slide completo
+    }
+
+    setInterval(moveBeneficiosCarousel, 4000); // Cambia cada 3 segundos
+
 
         // Script para animar el scroll a las secciones cuando se hace clic en los botones
         document.querySelectorAll('.button').forEach(button => {
