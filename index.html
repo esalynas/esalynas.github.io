@@ -32,6 +32,7 @@ body{
 }
 
 .dashboard{
+    position:relative; /* clave para el logo */
     width:90%;
     max-width:1100px;
     padding:30px;
@@ -41,6 +42,20 @@ body{
     -webkit-backdrop-filter: blur(18px);
     border:1px solid var(--border);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* LOGO */
+.logo{
+    position:absolute;
+    top:20px;
+    right:24px;
+}
+
+.logo img{
+    height:77px;
+    width:auto;
+    opacity:0.9;
+    filter: brightness(0) invert(1); /* opcional, para logo blanco */
 }
 
 .header{
@@ -124,6 +139,11 @@ body{
 
 <div class="dashboard">
 
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
     <div class="header">
         <h1>Centro de Control de Automatizaciones</h1>
         <p>Selecciona la actividad que deseas ejecutar</p>
@@ -131,7 +151,6 @@ body{
 
     <div class="grid">
 
-        <!-- FORM REAL -->
         <div class="card">
             <h3>Carta Asignación NIT</h3>
             <span>Notifica al abogado para emitir carta al Cte.</span>
@@ -139,7 +158,6 @@ body{
                target="_blank"></a>
         </div>
 
-        <!-- EJEMPLOS -->
         <div class="card">
             <h3>Reporte de Incidencia</h3>
             <span>Activa flujo de notificación y registro</span>
@@ -175,6 +193,3 @@ body{
 
 </body>
 </html>
-
-
-
