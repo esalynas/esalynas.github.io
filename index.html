@@ -32,7 +32,7 @@ body{
 }
 
 .dashboard{
-    position:relative; /* clave para el logo */
+    position:relative;
     width:90%;
     max-width:1100px;
     padding:30px;
@@ -44,7 +44,6 @@ body{
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-/* LOGO */
 .logo{
     position:absolute;
     top:20px;
@@ -55,7 +54,7 @@ body{
     height:77px;
     width:auto;
     opacity:0.9;
-    filter: brightness(0) invert(1); /* opcional, para logo blanco */
+    filter: brightness(0) invert(1);
 }
 
 .header{
@@ -139,7 +138,6 @@ body{
 
 <div class="dashboard">
 
-    <!-- LOGO -->
     <div class="logo">
         <img src="logo.png" alt="Logo">
     </div>
@@ -151,11 +149,11 @@ body{
 
     <div class="grid">
 
+        <!-- BOTÓN PROTEGIDO -->
         <div class="card">
             <h3>Carta Asignación NIT</h3>
             <span>Notifica al abogado para emitir carta al Cte.</span>
-            <a href="https://forms.office.com/pages/responsepage.aspx?id=tGiGIx1_pkur1QL88Y0bxE02Cj30Zl9JkYXcU0NYXmxURUFNWkwyR1QzNENXNDg5SFlSUDZYWE5UNS4u&route=shorturl"
-               target="_blank"></a>
+            <a href="#" onclick="accesoProtegido(event)"></a>
         </div>
 
         <div class="card">
@@ -191,6 +189,23 @@ body{
 
 </div>
 
+<script>
+function accesoProtegido(event){
+    event.preventDefault();
+
+    const claveCorrecta = "00"; // 🔐 cambia aquí la clave
+    const ingreso = prompt("Ingrese la clave de acceso:");
+
+    if(ingreso === claveCorrecta){
+        window.open(
+            "https://forms.office.com/pages/responsepage.aspx?id=tGiGIx1_pkur1QL88Y0bxE02Cj30Zl9JkYXcU0NYXmxURUFNWkwyR1QzNENXNDg5SFlSUDZYWE5UNS4u&route=shorturl",
+            "_blank"
+        );
+    } else {
+        alert("No permitido");
+    }
+}
+</script>
+
 </body>
 </html>
-
