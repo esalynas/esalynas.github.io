@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construir desde la operación | Esteban Salinas</title>
+<style>
+:root{--bg:#070b11;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);--text:#fff;--muted:#9fa7b5;--accent:#9fd9ff;--blur:24px;--shadow:0 40px 80px rgba(0,0,0,.55);--max:1300px}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,sans-serif;background:
+radial-gradient(circle at 10% 10%,rgba(116,173,255,.10),transparent 30%),
+radial-gradient(circle at 90% 70%,rgba(255,255,255,.04),transparent 30%),
+linear-gradient(180deg,#05080d,#0b1119,#121926);color:var(--text);overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(140px);opacity:.16}
+.orb1{width:520px;height:520px;background:#67b9ff;top:-120px;left:-80px;animation:float1 14s ease infinite}
+.orb2{width:420px;height:420px;background:#fff;right:-100px;bottom:-60px;animation:float2 18s ease infinite}
+@keyframes float1{50%{transform:translate(40px,60px)}} @keyframes float2{50%{transform:translate(-50px,-80px)}}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.015),transparent);background-size:250px;animation:grid 16s linear infinite}
+@keyframes grid{100%{transform:translateX(250px)}}
+body::after{content:"";position:fixed;inset:0;background:radial-gradient(circle at var(--x,50%) var(--y,50%),rgba(159,217,255,.08),transparent 40%)}
+section{width:min(92%,var(--max));margin:auto;padding:110px 0}
+#casos{display:none}
+.hero-box,.card,.sim{backdrop-filter:blur(var(--blur))}
+.hero-box{padding:60px;border-radius:40px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+.badge{display:inline-flex;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--accent)}
+h1{margin-top:22px;font-size:clamp(40px,8vw,112px)}
+.typed{display:block;color:var(--accent)}
+.sub{margin-top:24px;color:var(--muted);font-size:22px}
+.flow{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+.flow span,.area-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.flow span{padding:12px 18px;border-radius:999px}
+.cta{margin-top:46px;display:inline-flex;padding:18px 32px;border-radius:18px;background:#fff;color:#000;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.card{padding:34px;background:var(--panel);border:1px solid var(--line);border-radius:28px;cursor:pointer;transition:.3s}
+.card:hover{transform:translateY(-10px)}
+.kicker{font-size:12px;color:var(--accent);margin-bottom:18px}
+.metric{display:flex;justify-content:space-between;margin-top:18px}
+.metric .value{color:var(--accent)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:999}
+.sim{width:min(700px,92%);padding:40px;border-radius:30px;background:rgba(15,20,30,.95);border:1px solid rgba(255,255,255,.15)}
+.close{position:absolute;right:20px;top:15px;cursor:pointer}
+.game-container{text-align:center}
+.area-btn{display:block;width:100%;padding:15px;margin:10px 0;border-color:var(--accent);color:#fff;border-radius:10px;cursor:pointer}
+.log{font-family:monospace;animation:fade .3s forwards}
+@keyframes fade{to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div><div class="orb orb2"></div>
+
+<section class="hero"><div class="hero-box">
+<div class="badge">PORTAFOLIO INTERACTIVO</div>
+<h1><span class="typed" id="typing"></span><span>Esteban Salinas</span></h1>
+<div class="sub">Construyo soluciones desde datos, automatización y experiencia operativa.</div>
+<div class="flow"><span>SQL</span><span>Databricks</span><span>Power Automate</span><span>Python RPA</span></div>
+<a class="cta" onclick="mostrarSeccion()">Explorar simulaciones</a>
+</div></section>
+
+<section id="casos"><div class="grid">
+<div class="card" onclick="run('data')"><div class="kicker">SIMULACIÓN 01</div><h2>Calidad de información</h2><p>SQL + Databricks + modelo Levenshtein</p><div class="metric"><div>Consistency</div><div class="value">94%</div></div></div>
+<div class="card" onclick="run('flow')"><div class="kicker">SIMULACIÓN 02</div><h2>Experiencia operativa</h2><p>Power Automate + Teams + notificaciones</p><div class="metric"><div>Time Saved</div><div class="value">42%</div></div></div>
+<div class="card" onclick="run('rpa')"><div class="kicker">SIMULACIÓN 03</div><h2>Automatización aplicada</h2><p>Python RPA + análisis de datos</p><div class="metric"><div>Efficiency</div><div class="value">55%</div></div></div>
+<div class="card" onclick="run('mundial')"><div class="kicker">SIMULACIÓN 04</div><h2>Mundial Corporativo</h2><p>Simulador de desempeño por áreas</p><div class="metric"><div>Performance</div><div class="value">LIVE</div></div></div>
+</div></section>
+
+<div class="overlay" id="overlay" onclick="closeSim(event)">
+<div class="sim"><div class="close" onclick="closeSim(event)">✕</div>
+<div id="title"></div><div id="log"></div></div></div>
+
+<script>
+window.scrollTo(0,0);
+function mostrarSeccion(){casos.style.display='block';casos.scrollIntoView({behavior:'smooth'})}
+const phrases=["Construyo soluciones desde datos","Automatizo procesos reales","Transformo operación en sistemas","Optimizo experiencia operativa"];
+let i=0;typing.innerText=phrases[0];setInterval(()=>typing.innerText=phrases[(++i)%phrases.length],4000);
+document.addEventListener("mousemove",e=>{document.body.style.setProperty("--x",e.clientX+"px");document.body.style.setProperty("--y",e.clientY+"px")});
+function addLog(t){log.innerHTML+=`<div class=log>${t}</div>`}
+function addBlock(k,v){log.innerHTML+=`<div style="display:flex;justify-content:space-between;padding:10px;background:rgba(255,255,255,.05);margin:6px;border-radius:12px"><span>${k}</span><span style="color:#9fd9ff">${v}</span></div>`}
+async function run(type){
+overlay.style.display="flex";log.innerHTML="";const wait=(m)=>new Promise(r=>setTimeout(r,m));
+if(type==="data"){title.innerText="🧠 DATABRICKS • SQL + LEVENSHTEIN";addLog("Cluster inicializado");await wait(300);addBlock("Data Quality","94.2% ✔")}
+if(type==="flow"){title.innerText="⚡ POWER AUTOMATE";addBlock("Impacto","-42% tiempo")}
+if(type==="rpa"){title.innerText="🐍 PYTHON RPA";addBlock("Tiempo","18.3s")}
+if(type==="mundial"){
+title.innerText="🏆 MUNDIAL CORPORATIVO";
+log.innerHTML=`<div class=game-container>
+<p style="color:#9fa7b5">Gerente: Árbitro | Esteban: VAR</p>
+<div id=areaSelector>
+<button class=area-btn onclick="jugar('Ventas')">⚽ Selección Ventas</button>
+<button class=area-btn onclick="jugar('Operaciones')">⚽ Selección Operaciones</button>
+</div>
+<div id=gameUI style="display:none">
+<h3 id=areaDisplay></h3>
+<div style="font-size:40px;margin:20px">Goles: <span id=score>0</span></div>
+<button class=area-btn onclick="disparar()">⚽ Disparar (Resultado)</button>
+</div></div>`
+}}
+let goles=0;
+function jugar(a){areaSelector.style.display='none';gameUI.style.display='block';areaDisplay.innerText='Jugando: '+a;goles=0;score.innerText=0}
+function disparar(){if(Math.random()>.3){goles++;alert("¡GOOOL! Meta cumplida.")}else{alert("¡AUTOGOL! VAR detectó actividad no cumplida.")}score.innerText=goles}
+function closeSim(e){if(e.target.id==="overlay"||e.target.classList.contains("close"))overlay.style.display="none"}
+</script>
+</body></html>
